@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content='ie=edge'>
+    <!--we can apply logic in html documents-->
+    {% if title %}
+    <title>welcome to {{title}}</title>
+    {% else %}
+    <title>welcome to python</title>
+    {% endif %}
+</head>
+<body>
+    <h1>Hello, {{name}}</h1>
+    <table border='1'>
+        <head>
+            <tr>
+                <td>Name</td>
+                <td>Friend</td>
+            </tr>
+        </head>
+        <tbody>
+            <tr>
+                <td>Downer</td>
+                <td>Hans</td>
+            </tr>
+            <tr>
+                <td>Keanou</td>
+                <td>Tony</td>
+            </tr>
+        </tbody>
+    </table>
+    <!--actually, we can also do this by-->
+    <table border='1'>
+        <head>
+            <tr>
+                <td>Name</td>
+                <td>Age</td>
+            </tr>
+        </head>
+        {% if rows %}
+        {% for row in rows %}
+        <tbody>
+            <tr>
+                <td>{{row.name}}</td>
+                <td>{{row.age}}</td>
+            </tr>
+        </tbody>
+        {% endfor %}
+        {% else %}
+        <tbody>
+            <tr>
+                <td>Python</td>
+                <td>27</td>
+            </tr>
+            <tr>
+                <td>HTML</td>
+                <td>10</td>
+            </tr>
+        </tbody>
+        {% endif %}
+    </table>
+</body>
+</html>
+
